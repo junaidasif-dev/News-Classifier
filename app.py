@@ -49,6 +49,17 @@ if col3.button("🎯 Extract by Category"):
 
 st.markdown("---")
 
+# Show mode-specific instructions
+if st.session_state.mode == "single":
+    st.info("**You selected _Predict Headline_.**\n\nEnter a short news headline (e.g., _'NASA launches new space mission'_) to predict its category like World, Business, Sports, or Sci/Tech.")
+
+elif st.session_state.mode == "paragraph":
+    st.info("**You selected _Analyze Article_.**\n\nEnter a full article or a long paragraph. The app will break it into news and classify each one into categories such as World, Sports, Business, or Sci/Tech.")
+
+elif st.session_state.mode == "filter":
+    st.info("**You selected _Extract by Category_.**\n\nPaste a news article or long paragraph. Then select a category (like Sports), and the app will only display news related to that category.")
+
+
 # === MODE 1: Single Headline
 if st.session_state.mode == "single":
     user_input = st.text_area("✏️ Enter a news headline:")
