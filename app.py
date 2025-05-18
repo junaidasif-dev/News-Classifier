@@ -18,8 +18,8 @@ categories = ["World", "Sports", "Business", "Sci/Tech"]
 
 # Utility Functions
 def split_into_sentences(text):
-    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
-    return [s.strip() for s in sentences if s.strip()]
+    news= re.split(r'(?<=[.!?])\s+', text.strip())
+    return [s.strip() for s in news if s.strip()]
 
 def predict_news_category(text):
     embedded = embedder.encode([text])
@@ -74,13 +74,13 @@ if st.session_state.mode == "single":
 # === MODE 2: Full Paragraph
 elif st.session_state.mode == "paragraph":
     user_input = st.text_area("📄 Enter your full article:")
-    if st.button("Analyze Sentences"):
+    if st.button("Analyze News"):
         if not user_input.strip():
             st.warning("Please enter text.")
         else:
-            sentences = split_into_sentences(user_input)
+            news= split_into_sentences(user_input)
             st.markdown("### 📊 Results:")
-            for i, sent in enumerate(sentences):
+            for i, sent in enumerate(news):
                 category, _ = predict_news_category(sent)
                 st.markdown(f"**{i+1}. [{category}]** {sent}")
 
@@ -92,14 +92,14 @@ elif st.session_state.mode == "filter":
         if not user_input.strip():
             st.warning("Please enter text.")
         else:
-            sentences = split_into_sentences(user_input)
-            filtered = [f"{i+1}. {s}" for i, s in enumerate(sentences) if predict_news_category(s)[0] == selected]
+            news= split_into_sentences(user_input)
+            filtered = [f"{i+1}. {s}" for i, s in enumerate(news) if predict_news_category(s)[0] == selected]
             if filtered:
-                st.markdown(f"### 🔎 Showing **{selected}**-related sentences:")
+                st.markdown(f"### 🔎 Showing **{selected}**-related News:")
                 for line in filtered:
                     st.markdown(line)
             else:
                 st.info(f"No results found for **{selected}**.")
 
 st.markdown("---")
-st.caption("Built with ❤️ by Junaid Asif")
+st.caption("Built with ❤️ & 🧠 by Junaid Asif")
