@@ -2,5 +2,5 @@ streamlit==1.45.1
 tensorflow==2.19.0
 transformers==4.37.2
 sentence-transformers==2.2.2
-huggingface_hub>=0.10.0
+huggingface_hub>=0.10.0,<0.21
 tf-keras
