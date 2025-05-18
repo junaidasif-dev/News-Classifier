@@ -1,4 +1,6 @@
 streamlit
+tensorflow==2.13.0
+sentence-transformers==2.2.2
+transformers==4.30.2
+scikit-learn
 numpy
-tensorflow
-sentence-transformers
