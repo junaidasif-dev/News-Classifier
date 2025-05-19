@@ -1,6 +1,6 @@
 # 🧠 News Classifier App – Streamlit Interface
 
-This repository contains the **Streamlit app** for a machine learning-based **News Classifier**.  
+This repository contains the **Streamlit app** for a deep learning-based **News Classifier**.  
 It provides a clean, interactive web interface for users to input news headlines and get instant predictions about the news category (e.g., Business, Sports, Sci/Tech, World).
 
 ▶️ **Live App**: [Click here to open the App](https://news-article-headlines-classifier.streamlit.app/)
