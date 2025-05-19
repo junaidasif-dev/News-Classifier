@@ -24,7 +24,7 @@ The complete backend code for this project, including:
 
 ## 💡 Features
 
-- 📰 Classifies news into categories using a trained ML model
+- 📰 Classifies news into categories using a trained DL model
 - 🧼 Clean and simple UI built with Streamlit
 - ⚡ Fast and lightweight deployment
 - 🔒 `.npy` and model files loaded locally (not pushed to GitHub)
